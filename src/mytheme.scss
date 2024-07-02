@@ -1,0 +1,121 @@
+@use '@angular/material' as mat;
+@import '@angular/material/theming';
+@include mat.core();
+
+$dark-text:(#002a5b, 0.87);
+$light-text: (#f9f5eb, 0.87);
+
+$light-beige-palette: (
+  50: #f9f5eb,
+  100: #f6e5c0,
+  200: #f4d58e,
+  300: #f2c35b,
+  400: #f1b636,
+  500: #f2a918,
+  600: #ee9d12,
+  700: #e88e08,
+  800: #e37f00,
+  900: #db6800,
+  contrast: (
+    50: $dark-text,
+    100: $dark-text,
+    200: $dark-text,
+    300: $dark-text,
+    400: $dark-text,
+    500: $dark-text,
+    600: $dark-text,
+    700: $light-text,
+    800: $light-text,
+    900: $light-text,
+  )
+);
+
+$dark-navy-palette: (
+  50: #e6eaf1,
+  100: #bfcade,
+  200: #95a9c7,
+  300: #6c87b0,
+  400: #4b6ea1,
+  500: #245693,
+  600: #1c4e8a,
+  700: #10447f,
+  800: #073b72,
+  900: #002a5b,
+  contrast: (
+    50: $dark-text,
+    100: $dark-text,
+    200: $dark-text,
+    300: $dark-text,
+    400: $light-text,
+    500: $light-text,
+    600: $light-text,
+    700: $light-text,
+    800: $light-text,
+    900: $light-text,
+  )
+);
+
+$dark-beige-palette: (
+  50: #e4dccf,
+  100: #c0a883,
+  200: #95702f,
+  300: #6c3e00,
+  400: #581f00,
+  500: #470000,
+  600: #470000,
+  700: #460000,
+  800: #440000,
+  900: #480000,
+  contrast: (
+    50: $dark-text,
+    100: $dark-text,
+    200: $dark-text,
+    300: $light-text,
+    400: $light-text,
+    500: $light-text,
+    600: $light-text,
+    700: $light-text,
+    800: $light-text,
+    900: $light-text,
+  )
+);
+
+$bright-pink-palette: (
+  50: #feebee,
+  100: #fccdd3,
+  200: #eb9a9c,
+  300: #e07375,
+  400: #ea5454,
+  500: #ef443c,
+  600: #e03b3a,
+  700: #ce3134,
+  800: #c12b2d,
+  900: #b21f21,
+  contrast: (
+    50: $dark-text,
+    100: $dark-text,
+    200: $dark-text,
+    300: $dark-text,
+    400: $light-text,
+    500: $light-text,
+    600: $light-text,
+    700: $light-text,
+    800: $light-text,
+    900: $light-text,
+  )
+);
+
+$my-primary: mat.define-palette($dark-navy-palette, 900, 500, 800);
+$my-accent: mat.define-palette($light-beige-palette, 50, 500, 100);
+
+$my-warn: mat.define-palette($bright-pink-palette, 400, 200, 800);
+
+$my-theme: mat.define-light-theme((
+ color: (
+   primary: $my-primary,
+   accent: $my-accent,
+   warn:$my-warn
+ )
+));
+
+@include mat.all-component-themes($my-theme);
