@@ -1,0 +1,35 @@
+.mat-mdc-header-row {
+    background-color: rgb(199, 239, 230);
+  }
+
+.field{
+    width: 45%;
+    margin: 10px;
+}
+
+.date{
+    width: 45%;
+    margin: 10px;
+}
+
+h2{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.addPromoTitle{
+    margin-top: 25px;
+    margin-bottom: 0px;
+}
+
+.btnlogin {
+    width: 45%;
+    margin-left: 20%;
+    margin-bottom: 20px;
+    margin-right: 20%;
+}
+
+#CustToolbar {
+   background: linear-gradient(90deg, #054653  19%, #31A4BC 100%);   
+   color: white;
+}

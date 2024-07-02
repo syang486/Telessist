@@ -1,0 +1,92 @@
+<mat-toolbar id="CustToolbar">
+    <span>
+        <div style="font-size:40px ; font-family:'Times New Roman', Times, serif; color: white;">
+            <img src="/assets/Images/logo.png" alt="logo" style="width: 40px; height: 40px;" class="mb-2" />
+            Telessist
+        </div>
+    </span>
+</mat-toolbar>
+
+<div class="container text-center">
+    <div>
+        <h2>General Service Details</h2>
+    </div>
+    <form [formGroup]="updateForm" (ngSubmit)="updateService(generalService.serviceId)">
+        <div>
+            <div>
+                <mat-form-field class="field">
+                    <mat-label>Service ID</mat-label>
+                    <input matInput value="{{generalService.serviceId}}" formControlName="serviceId" readonly>
+                </mat-form-field>
+                <mat-form-field class="field">
+                    <mat-label>Service Name</mat-label>
+                    <input matInput value="{{generalService.serviceName}}" formControlName="serviceName" readonly>
+                </mat-form-field>
+            </div>
+            
+            <div>
+                <mat-form-field class="field">
+                    <mat-label>Monthly Price</mat-label>
+                    <input matInput value="{{generalService.monthlyPrice}}" formControlName="monthlyPrice" readonly>
+                </mat-form-field>
+                <mat-form-field class="field">
+                    <mat-label>Location</mat-label>
+                    <input matInput value="{{generalService.location}}" formControlName="location" readonly>
+                </mat-form-field>
+            </div>
+            
+        </div>
+    </form>
+
+        <table mat-table [dataSource]="dataTable" class="mat-elevation-z8">
+  
+            <!-- Id Column -->
+            <ng-container matColumnDef="promoId">
+              <th mat-header-cell *matHeaderCellDef> No. </th>
+              <td mat-cell *matCellDef="let element"> {{element.promoId}} </td>
+            </ng-container>
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="promoName">
+              <th mat-header-cell *matHeaderCellDef> Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.promoName}} </td>
+            </ng-container>
+          
+            <!-- Discount Column -->
+            <ng-container matColumnDef="discount">
+              <th mat-header-cell *matHeaderCellDef> Discount </th>
+              <td mat-cell *matCellDef="let element"> ${{element.discount}} </td>
+            </ng-container>
+          
+            <!-- Promo Desc Column -->
+            <ng-container matColumnDef="promoDesc">
+              <th mat-header-cell *matHeaderCellDef> Promo Description </th>
+              <td mat-cell *matCellDef="let element"> {{element.promoDesc}} </td>
+            </ng-container>
+        
+            <!-- Region Column -->
+            <ng-container matColumnDef="region">
+                <th mat-header-cell *matHeaderCellDef> Region </th>
+                <td mat-cell *matCellDef="let element">{{element.region}}</td>
+            </ng-container>
+          
+            <!-- Expiry Date Column -->
+          
+            <ng-container matColumnDef="promoExpiryDate">
+                <th mat-header-cell *matHeaderCellDef> Promo Expiry Date </th>
+                <td mat-cell *matCellDef="let element">{{element.promoExpiryDate}}</td>
+            </ng-container>
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          
+        </table>
+
+        <div class="addCancelButtons">
+            <button mat-raised-button class="btnlogin" style="background-color: #ea5454; color: white;" mat-button mat-dialog-close>Cancel</button>
+        </div>
+</div>
+
+  
+  
+  
