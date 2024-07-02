@@ -1,0 +1,90 @@
+<mat-toolbar id="CustToolbar">
+    <span>
+        <div style="font-size:40px ; font-family:'Times New Roman', Times, serif; color: white;">
+            <img src="/assets/Images/logo.png" alt="logo" style="width: 40px; height: 40px;" class="mb-2" />
+            Telessist
+        </div>
+    </span>
+</mat-toolbar>
+
+<h4 style="text-align: center; margin-top: 1%; margin-bottom: 1%;">Create Call Log</h4>
+
+<div class="container text-center">    
+    <form id="callLogForm" [formGroup]="callForm" (ngSubmit)="addCallLogForm()">
+        <div>
+            <mat-form-field class="field">
+                <mat-label>Call Log ID</mat-label>
+                <input matInput value="{{uuid}}" readonly>
+            </mat-form-field>
+            <mat-form-field class="field">
+                <mat-label>CSR Id</mat-label>
+                <input matInput value="{{csrId}}" readonly>
+            </mat-form-field>
+            <mat-form-field class="field">
+                <mat-label>Client ID</mat-label>
+                <input matInput value="{{request.clientId}}" readonly>
+            </mat-form-field>
+            <mat-form-field class="field">
+                <mat-label>Request ID</mat-label>
+                <input matInput value="{{request.equipmentRequestId}}" readonly>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="fill" class="date">
+                <mat-label>Date of Call</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="callDate">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <small *ngIf="callForm.get('callDate')?.touched && callForm.get('callDate')?.hasError('required')">Call Date is required</small>
+
+            <mat-form-field class="field">
+                <mat-label>Call Duration</mat-label>
+                <input matInput value="{{callLog.callTime}}" formControlName="callTime">
+            </mat-form-field>
+            <small *ngIf="callForm.get('callTime')?.touched && callForm.get('callTime')?.hasError('required')">Call Duration is required</small>
+            <small *ngIf="callForm.get('callTime')?.touched && callForm.get('callTime')?.hasError('pattern')">Call Date should have numbers only</small>
+
+            <mat-form-field appearance="fill" class="type">
+                <mat-label>Call Type</mat-label>
+                <mat-select required formControlName="callType">
+                  <mat-option *ngFor="let type of callTypes" [value]="type">{{type}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <div class="error-desc">
+                <small *ngIf="callForm.get('callType')?.touched && callForm.get('callType')?.hasError('required')">Call Type is required</small>
+            </div>
+        </div>
+        <div>
+            <mat-form-field class="field">
+                <mat-label>Call Description</mat-label>
+                <mat-select required formControlName="callDesc">
+                    <mat-option *ngFor="let desc of callDesc" [value]="desc">{{desc}}</mat-option>
+                  </mat-select>
+            </mat-form-field>
+            <div class="error-desc">
+                <small *ngIf="callForm.get('callDesc')?.touched && callForm.get('callDesc')?.hasError('required')">Call Description is required</small>
+            </div>
+        </div>
+        <div>
+            <mat-form-field class="field">
+                <mat-label>Call Solution</mat-label>
+                <textarea matInput formControlName="callSolution"></textarea>
+            </mat-form-field>
+            <div class="error-desc">
+                <small *ngIf="callForm.get('callSolution')?.touched && callForm.get('callSolution')?.hasError('required')">Call Solution is required</small>
+            </div>
+        </div>
+
+        <div class = "addCancelButtons">
+            <button mat-raised-button mat-dialog-close type="submit" style="background-color: #31A4BC; color: white;"
+                class="btnlogin">Add Call Log</button> 
+              <button mat-raised-button mat-dialog-close style="background-color: #b95b5b; color: white;"
+                    class="btnlogin">Cancel
+                </button>
+          </div>
+    </form>
+</div>
+

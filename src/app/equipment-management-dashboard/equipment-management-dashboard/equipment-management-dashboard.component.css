@@ -1,0 +1,31 @@
+#equipmanagementHeader{
+    color:#002B5B;
+    font-weight: 700;
+    font-size: cal(2em + 1vw);
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+.filter:after{
+    content: '';
+    display: table;
+    clear:both;
+}
+
+.filter div{
+    float:right;
+}
+
+.filter div:first-child{
+    float:left;
+}
+
+#typeDropDown{
+    margin: auto 10px;
+}
+
+#addicon{
+    color:#EA5455;
+    transform: scale(2.5);
+}
+

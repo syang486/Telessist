@@ -1,0 +1,108 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar id="CustToolbar">
+    <span>
+      <button id="navBtn" mat-mini-fab style="background-color: #31A4BC; color: white;"
+        (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    </span>
+    <span class="example-spacer"></span>
+    <span>
+      <a class="nav-link" routerLink="" style="text-decoration: none;">
+        <button id="logoutBtn" mat-mini-fab style="background-color: #E06E6B; color: white;">
+          <mat-icon>logout</mat-icon>
+        </button>
+      </a>
+    </span>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container shadow-lg" [style.marginTop.px]="mobileQuery.matches ? 0 : 0">
+    <mat-sidenav id="sidenav" #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" class="shadow">
+
+
+      <a id="profile" class="nav-link" routerLink="clientprofile" style="text-decoration: none;">
+        
+        <img id="userImg" src="/assets/Images/genericAccIcon.png" alt="user-account default pic">
+        <h3 id="toolbartext">{{clientName}}</h3>
+      </a>
+    
+
+
+      <!-- Dashboard -->
+      <a class="nav-link" routerLink="clientdashboard" style="text-decoration: none;">
+        <button mat-button style="padding-right: 44%;" id=btnforeCol>
+          <div class="row">
+            <div class="col-auto me-auto">
+              <mat-icon>view_comfy_alt</mat-icon>
+            </div>
+            <div class="col-auto">
+              Dashboard
+            </div>
+          </div>
+        </button>
+      </a>
+
+
+      <!-- Service Request -->
+      <a class="nav-link" routerLink="clientservicerequest" style="text-decoration: none;">
+        <button class="serviceRequest" mat-button style="padding-right: 30%;" id=btnforeCol>
+          <div class="row">
+            <div class="col-auto me-auto">
+              <mat-icon>cell_wifi</mat-icon>
+            </div>
+            <div class="col-auto">
+              Service Request
+            </div>
+          </div>
+        </button>
+      </a>
+
+
+
+
+      <!-- Equipment Request -->
+      <a class="nav-link" routerLink="clientequiprequest" style="text-decoration: none;">
+        <button mat-button style="padding-right: 19%;" id=btnforeCol>
+          <div class="row">
+            <div class="col-auto me-auto">
+              <mat-icon>fax</mat-icon>
+            </div>
+            <div class="col-auto">
+              Equipment Request
+            </div>
+          </div>
+        </button>
+      </a>
+
+
+      <!-- Tech Request -->
+      <a class="nav-link" routerLink="clienttechrequest" style="text-decoration: none;">
+        <button mat-button style="padding-right: 37%;" id=btnforeCol>
+          <div class="row">
+            <div class="col-auto me-auto">
+              <mat-icon>co_present</mat-icon>
+            </div>
+            <div class="col-auto">
+              Tech Request
+            </div>
+          </div>
+        </button>
+      </a>
+    </mat-sidenav>
+
+    <mat-sidenav-content style="min-height: 900px;">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+
+<div class="container">
+  <footer class="py-3 my-4">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Documentation</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contact</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+    </ul>
+    <p class="text-center text-muted">&copy; 22023 Telessist, Inc. All rights reserved.</p>
+  </footer>
+</div>

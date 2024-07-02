@@ -1,0 +1,39 @@
+#CustToolbar {
+    background: linear-gradient(90deg, #054653  19%, #31A4BC 100%);    
+    color: white;
+}
+
+#sidenav {
+    width: 255px;
+    background: linear-gradient(0deg, #31A4BC 0%, #E06E6B 90%);
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+#btnforeCol{
+    color: white;
+}
+
+#userImg {
+    height: 190px;
+    width: 190px;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+#toolbartext {
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#navbtn{
+    width: 250px; 
+    font-size: 16px;
+    margin-bottom: 5px;
+}

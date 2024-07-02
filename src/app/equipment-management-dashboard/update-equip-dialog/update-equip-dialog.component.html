@@ -1,0 +1,59 @@
+<mat-toolbar id="CustToolbar">
+  <span>
+      <a [routerLink]="['']" style="text-decoration: none; color: white;">
+      <button mat-button style="font-size:40px ; font-family:'Times New Roman', Times, serif">
+          <img src="/assets/Images/logo.png" alt="logo" style="width: 40px; height: 40px;" class="mb-2"/> Telessist
+      </button>
+      </a>   
+  </span>
+</mat-toolbar>
+
+<h2 style="text-align: center; margin-top: 2%; margin-bottom: 2%;">Update Equipmentnt</h2>
+
+<div class="formTitle">
+  <form [formGroup]="updateForm" (ngSubmit)="updateEquipment()">
+      <div>
+          <div>
+            <mat-form-field class="field">
+              <mat-label>Equipment Model</mat-label>
+              <input matInput value="{{equip.equipmentModel}}" formControlName="equipmentModel" required>
+            </mat-form-field>
+            <div class="error-desc">
+              <small *ngIf="updateForm.get('equipmentModel')?.touched && updateForm.get('equipmentModel')?.hasError('required')">Model is required</small>
+            </div>
+          </div>
+
+          <div>
+            <mat-form-field appearance="fill" class="status field">
+              <mat-label>Equipment Type</mat-label>
+              <mat-select required formControlName="equipmentType">
+                <mat-option *ngFor="let type of types" [value]="type">{{type}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <div class="error-desc">
+              <small *ngIf="updateForm.get('equipmentType')?.touched && updateForm.get('equipmentType')?.hasError('required')">Type is required</small>
+            </div>
+          </div>
+
+          <div>
+            <mat-form-field class="field">
+              <mat-label>Equipment Price</mat-label>
+              <input matInput value="{{equip.equipmentPrice}}" formControlName="equipmentPrice" required>
+            </mat-form-field>
+            <div class="error-desc">
+              <small *ngIf="updateForm.get('equipmentPrice')?.touched && updateForm.get('equipmentPrice')?.hasError('required')">Price is required and only numbers are valid</small>
+            </div>
+          </div>
+          
+          
+      </div>
+
+      <div class = "addCancelButtons">
+        <button mat-raised-button mat-dialog-close type="submit" style="background-color: #31A4BC; color: white;"
+            class="btnlogin">Update one equipment</button> 
+          <button mat-raised-button mat-dialog-close style="background-color: #b95b5b; color: white;"
+                class="btnlogin">Cancel
+                </button>
+      </div>
+  </form>
+</div>

@@ -1,0 +1,77 @@
+<div class="filter">
+    <mat-form-field id='typeDropDown' appearance="fill">
+        <mat-label>By Status</mat-label>
+        <mat-select [(value)]="tempER" (selectionChange)="filterStatus()">
+            <mat-option value="None">None</mat-option>
+            <mat-option value="Pending">Pending</mat-option>
+            <mat-option value="Active">Active</mat-option>
+            <mat-option value="Inactive">Inactive</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field style="width: 20%; min-width: 375px; margin-right:2%;">
+        <mat-label>Search</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Search Equipment request..." #input>
+    </mat-form-field>
+</div>
+
+
+<div>
+    <table id='equipmentTable' mat-table [dataSource]="equipmentRequestTable" class="mat-elevation-z8">
+        <!-- <ng-container matColumnDef="equipmentRequestId">
+            <th mat-header-cell *matHeaderCellDef> Equipment Request Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.equipmentRequestId}} </td>
+        </ng-container> -->
+
+        <ng-container matColumnDef="equipmentId">
+            <th mat-header-cell *matHeaderCellDef> Equipment Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.equipmentId}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="clientId">
+            <th mat-header-cell *matHeaderCellDef> Client Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.clientId}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="dateOfEquipRequest">
+            <th mat-header-cell *matHeaderCellDef> Date & Time </th>
+            <td mat-cell *matCellDef="let element"> {{date(element.dateOfEquipRequest)}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="equipRequestStatus">
+            <th mat-header-cell *matHeaderCellDef> Equipment Status </th>
+            <td mat-cell *matCellDef="let element"> {{element.equipRequestStatus}} </td>
+        </ng-container>
+
+        <ng-cotainer matColumnDef="resolve">
+            <th mat-header-cell *matHeaderCellDef> Resolve </th>
+            <td mat-cell *matCellDef="let element">
+                <button (click)="updatedEquipmentRequest(element)" class="btn btn-outline"><i class="fa-solid fa-pen"></i></button>
+            </td>
+        </ng-cotainer>
+
+        <ng-cotainer matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef> Delete </th>
+            <td mat-cell *matCellDef="let element">
+                <button (click)="deleteEquipmentRequest(element.equipmentRequestId)"
+                    class="btn btn-outline"><i class="fa-solid fa-trash"></i></button>
+            </td>
+        </ng-cotainer>
+
+        <ng-cotainer matColumnDef="callLog">
+            <th mat-header-cell *matHeaderCellDef> Call Log </th>
+            <td mat-cell *matCellDef="let element">
+                <button (click)="addCallLog(element)" class="btn btn-outline">
+                    <i class="fas f-solid fa-phone"></i></button>
+            </td>
+        </ng-cotainer>
+
+        <tr style="background-color: rgb(199, 239, 230);" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+</div>
+
+<div>
+    <mat-paginator  id="paginator"  [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page"></mat-paginator>
+</div>

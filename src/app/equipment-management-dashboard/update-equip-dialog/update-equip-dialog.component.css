@@ -1,0 +1,32 @@
+.field {
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 10px;
+}
+
+.formTitle {
+    margin-top: 3%;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+    border-radius: 20px;
+    max-width: 800px;
+    color: white;
+}
+
+.btnlogin {
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 3%;
+}
+
+#CustToolbar {
+   background: linear-gradient(90deg, #054653  19%, #31A4BC 100%);   
+   color: white;
+}
+
+.addCancelButtons{
+   margin-top: 20px;
+}

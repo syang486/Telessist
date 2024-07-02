@@ -1,0 +1,53 @@
+<h2 style="text-align: center; margin-top: 1%;">Equipment Inventory</h2>
+
+
+<div class="filter">
+  <mat-form-field id="typeDropDown" appearance="fill">
+    <mat-label>By Type</mat-label>
+    <mat-select [(value)]="selected" (selectionChange)="handleStatus()">
+      <mat-option value="None">None</mat-option>
+      <mat-option value="Mobile">Mobile</mat-option>
+      <mat-option value="Internet">Internet</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field style="width: 20%; min-width: 375px; margin-right:2%;">
+    <mat-label>Search By Equipment Model Name</mat-label>
+    <input matInput color="primary" (keyup)="applyFilter($event)" placeholder="" #input>
+  </mat-form-field>
+</div>
+
+<div>
+  <table id="equipTable" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="Model">
+      <th mat-header-cell *matHeaderCellDef> Model </th>
+      <td mat-cell *matCellDef="let row"> {{row.equipmentModel}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Type">
+      <th mat-header-cell *matHeaderCellDef> Type </th>
+      <td mat-cell *matCellDef="let row"> {{row.equipmentType}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Price">
+      <th mat-header-cell *matHeaderCellDef> Price </th>
+      <td mat-cell *matCellDef="let row"> {{row.equipmentPrice}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Count">
+      <th id="amount" mat-header-cell *matHeaderCellDef> Amount In Stock </th>
+      <td mat-cell *matCellDef="let row"> {{row.count}}</td>
+    </ng-container>
+
+    <tr style="background-color: rgb(199, 239, 230);" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="5">No data matching the filter "{{input.value}}"</td>
+    </tr>
+  </table>
+
+  <mat-paginator id="paginator" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons>
+  </mat-paginator>
+
+</div>

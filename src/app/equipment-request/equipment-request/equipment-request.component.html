@@ -1,0 +1,38 @@
+<div class="formTitle">
+    <h2 style="text-align: center; padding: 5%;">Equipment Request Form</h2>
+
+    <form id='requestForm' [formGroup]="equipmentForm" (ngSubmit)="addEquipmentRequest()">
+
+        <mat-form-field appearance="fill" class="equipment">
+            <mat-label>Equipment to Request</mat-label>
+            <mat-select required formControlName="equipmentId">
+                <mat-option *ngFor="let equipment of equipments"
+                    [value]="equipment.equipmentId"> {{equipment.equipmentModel}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+
+        <div class="error-desc">
+            <small
+                *ngIf="equipmentForm.get('equipmentId')?.touched && equipmentForm.get('equipmentId')?.hasError('required')">
+                *Equipment Selection is required
+            </small>
+        </div>
+
+        <mat-form-field class="description">
+            <mat-label>Equipment Request Description</mat-label>
+            <textarea matInput formControlName="equipRequestDesc"></textarea>
+        </mat-form-field>
+        <div class="error-desc">
+            <small
+                *ngIf="equipmentForm.get('equipRequestDesc')?.touched && equipmentForm.get('equipRequestDesc')?.hasError('required')">
+                *Equipment Description is required
+            </small>
+        </div>
+
+        <button mat-raised-button type="submit" value="Submit Equipment Request"
+            style="background-color: #31A4BC; color: white;" class="btnlogin">
+            Submit
+        </button>
+    </form>
+</div>

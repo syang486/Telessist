@@ -1,0 +1,19 @@
+
+#clientHeader {
+    color: #002B5B;
+    font-weight: 700;
+    font-size: calc(2em + 1vw);
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+.search {
+    display: flex;
+    justify-content: end;
+}
+
+mat-paginator {
+    background-color: transparent;
+    padding-top: 1em;
+    padding-bottom: 2em;
+}

@@ -1,0 +1,32 @@
+<mat-card class="clientCard">
+    <mat-card-header class="card-head">
+      <div mat-card-avatar class="avatar"><i class="fa-solid fa-user"></i></div>
+      <mat-card-title id="name">{{indClient.firstName}} {{indClient.lastName}}</mat-card-title>
+      <mat-card-subtitle><p id="username">{{indClient.userName}}</p></mat-card-subtitle>
+      <mat-card-subtitle><i class="fa-solid fa-location-dot"></i> <p id="address">{{indClient.streetAddress}}, {{indClient.city}} {{indClient.province}}</p></mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      
+      <div class="request-container">
+        <div>
+            <p class="request">Service Request</p>
+            <ul>
+                <li *ngFor="let s of serviceRequests"> {{s.serviceId}}: {{s.serviceRequestStatus}}</li>
+            </ul>
+        </div>
+        <div>
+            <p class="request">Equipment Request</p>
+            <ul>
+                <li *ngFor="let e of equipRequests"> {{e.equipmentId}}: {{e.equipRequestStatus}}</li>
+            </ul>
+        </div>
+        <div>
+            <p class="request">Tech Request</p>
+            <ul>
+                <li *ngFor="let t of techRequests"> {{t.technician?.techFirstName}}: {{t.techRequestStatus}}</li>
+            </ul>
+        </div>
+      </div>
+    </mat-card-content>
+</mat-card>
+

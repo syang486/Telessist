@@ -1,0 +1,99 @@
+.clientCard {
+    min-height: 25.7em;
+    max-height: 25.7em;
+    color: #002B5B;
+    overflow: auto; 
+    position: relative;
+    background-color: #dafffb97;
+}
+
+.card-head {
+    padding-top: 1.5em;
+    background-color: white;
+    min-height: calc(12em - 3.7vw);
+    max-height: calc(12em - 3.7vw);
+}
+
+#name {
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+#username {
+    display: inline;
+    font-size: 1em;
+    font-weight: 500;
+    color: rgb(203, 39, 39);
+}
+
+.fa-location-dot{
+    font-size: 1em;
+    margin: 0 5px 0 0;
+} 
+
+.avatar {
+    background-color: #b8dae876;
+    width: 4em;
+    height: 4em;
+    margin-top: 0.3em;
+}
+
+.fa-user {
+    font-size: 2.2em;
+    margin: 13px 17px;
+}
+
+#address {
+    display: inline-block;
+    font-size: 0.9em;
+    font-weight: 400;
+}
+
+.request {
+    font-weight: 500;
+}
+
+p {
+    margin-bottom: 3px;
+}
+
+li {
+    color: rgb(31, 31, 31);
+    font-size: 0.9em;
+}
+
+.mat-mdc-card-content {
+    padding: 0;
+}
+
+.mat-mdc-card-content:last-child {
+    padding: 3px;
+}
+
+.request {
+    padding: 15px 16px 0;
+    letter-spacing: 2px;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+::-webkit-scrollbar-track {
+    background: #E4DCCF; 
+  }
+   
+  
+::-webkit-scrollbar-thumb {
+    background: #002B5B; 
+  }
+  
+
+::-webkit-scrollbar-thumb:hover {
+    background: #245693; 
+  }
+
+  li{
+    font-weight: 700;
+  }
+
