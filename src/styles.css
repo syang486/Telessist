@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #fdfdfd;
+}
+
+#paginator {
+    background-color: transparent;
+}
+
+.filter {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#typeDropDown {
+    margin: auto 10px;
+    min-width: 115px;
+}
+
+#generalTableHeader{
+    background-color: rgb(199, 239, 230);
+}
+
+.btnlogin {
+    width: 45%;
+    margin-left: 20%;
+    margin-bottom: 20px;
+    margin-right: 20%;
+}
+
+#CustToolbar {
+   background: linear-gradient(90deg, #054653  19%, #31A4BC 100%);   
+   color: white;
+}
+
+.addCancelButtons{
+   margin-top: 35px;
+}
+  
+.field{
+    width: 45%;
+    margin: 10px;
+}
