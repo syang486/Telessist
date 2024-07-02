@@ -1,0 +1,118 @@
+<mat-toolbar id="CustToolbar">
+    <span>
+        <a [routerLink]="['']" style="text-decoration: none; color: white;">
+        <button mat-button style="font-size:40px ; font-family:'Times New Roman', Times, serif">
+          <img src="/assets/Images/logo.png" alt="logo" style="width: 40px; height: 40px;" class="mb-2"/> Telessist
+        </button>
+      </a>   
+      </span>
+    <span class="example-spacer"></span>    
+    <a [routerLink]="['/register']" style="text-decoration: none; margin-left: 10px;">
+      <button mat-raised-button id="navbtn">Register
+          <mat-icon>create</mat-icon>
+      </button>
+  </a>
+  </mat-toolbar>
+   
+   <div class="registration-form">
+        <form [formGroup]="formValues" (ngSubmit)="userLogin()">
+            <mat-icon
+            style="transform: scale(5); color: aliceblue; margin-left: 47.5%; margin-right: 50%; margin-top: 10%;
+             margin-bottom: 10%;">account_circle
+             </mat-icon>
+            <h2 id="logintitle" style="text-align: center; color: white;">Login</h2><br>
+            
+                <mat-form-field appearance="fill" class="inpFields">
+                    <mat-label>Select user type</mat-label>
+                    <mat-select formControlName="userType">
+                        <mat-option value="client">Client</mat-option>
+                        <mat-option value="admin">Manager</mat-option>
+                        <mat-option value="agent">Agent</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            
+            <div class="errorstyle">
+                <small *ngIf="formValues.get('userType')?.touched && formValues.get('userType')?.hasError('required')">*
+                    User Type is required</small>
+            </div>
+            
+           
+            <mat-form-field appearance="fill" class="inpFields">
+                <mat-label>Username</mat-label>
+                <input matInput type="text" formControlName="username" id="username"
+                placeholder="Username" >
+              </mat-form-field>            
+            <div class="errorstyle">
+                <small
+                    *ngIf="formValues.get('username')?.touched && formValues.get('username')?.hasError('required')">*User
+                    Name is required</small>
+            </div>
+
+
+            <mat-form-field appearance="fill" class="inpFields">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password" id="password"
+                placeholder="Password">
+              </mat-form-field>            
+            <div class="errorstyle">
+                <small *ngIf="formValues.get('password')?.touched && formValues.get('password')?.hasError('required')">*
+                    Password is required</small>
+            </div>
+
+            <button mat-raised-button type="submit" style="background-color: #31A4BC; color: white;" class="btnlogin">Login
+                <mat-icon>login</mat-icon>
+            </button>
+            
+        </form>
+    </div>
+    
+    <hr style="width: 90%; margin-left: 5%; margin-right: 5%;">
+
+    <div class="container">
+        <footer class="py-5">
+          <div class="row">
+            <div class="col-6 col-md-2 mb-3">
+              <h5>Manager</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>            
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>        
+              </ul>
+            </div>
+      
+            <div class="col-6 col-md-2 mb-3">
+              <h5>Clients</h5>
+              <ul class="nav flex-column">            
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>            
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>            
+              </ul>
+            </div>
+      
+            <div class="col-6 col-md-2 mb-3">
+              <h5>CSR Agents</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>            
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>        
+              </ul>
+            </div>
+      
+            <div class="col-md-5 offset-md-1 mb-3">
+              <form>
+                <h5>Subscribe to our newsletter</h5>
+                <p>Get monthly digest of what's new and exciting updates from us.</p>
+                <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                  <label for="newsletter1" class="visually-hidden">Email address</label>
+                  <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                  <button class="btn btn-primary" type="button">Subscribe</button>
+                </div>
+              </form>
+            </div>
+          </div>
+      
+          <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+            <h6>&copy; 2023 Telessist, Inc. All rights reserved.</h6>
+            <ul class="list-unstyled d-flex">
+              <li class="ms-3"><mat-icon>facebook</mat-icon></li>
+            </ul>
+          </div>
+        </footer>
+      </div>

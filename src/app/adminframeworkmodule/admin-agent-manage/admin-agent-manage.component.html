@@ -1,0 +1,57 @@
+<h2 id="agentHead" style="text-align: center; margin-top: 1%;">Manage Agents</h2>
+
+
+<div class="filter">
+<button class="m-1" mat-fab color="primary" (click)="openAddDialog()">
+  <mat-icon>add</mat-icon>
+</button>
+
+<mat-form-field style="width: 20%; min-width: 375px; margin-right:2%;">
+  <mat-label>Search</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Search agents..." #input>
+</mat-form-field>
+</div>
+
+<table id="serviceTable" mat-table [dataSource]="dataTable" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="userName">
+    <th mat-header-cell *matHeaderCellDef> User Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.userName}} </td>
+  </ng-container>
+      
+  <ng-container matColumnDef="firstName">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="lastName">
+      <th mat-header-cell *matHeaderCellDef> CSR Id </th>
+      <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+  </ng-container>
+  
+  <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+  </ng-container>
+
+  <ng-cotainer matColumnDef="update">
+    <th mat-header-cell *matHeaderCellDef> Update </th>
+    <td mat-cell *matCellDef="let element">
+      <button (click)="updateAgent(element)" class="btn btn-outline"><i class="fa-solid fa-pen"></i></button>
+    </td>
+  </ng-cotainer>
+
+  <ng-cotainer matColumnDef="delete">
+    <th id="deleteHeader" mat-header-cell *matHeaderCellDef> Delete </th>
+    <td mat-cell *matCellDef="let element">
+      <button (click)="deleteAgent(element.agentId)" class="btn btn-outline"><i class="fa-solid fa-trash"></i></button>
+    </td>
+  </ng-cotainer>
+
+    <tr style="background-color: rgb(199, 239, 230);" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>    
+
+<div>
+  <mat-paginator id="paginator" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page"></mat-paginator>
+</div>

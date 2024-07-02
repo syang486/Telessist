@@ -1,0 +1,175 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar id="CustToolbar">
+    <span>
+      <button id="navBtn" mat-mini-fab style="background-color: #31A4BC; color: white;"
+        (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    </span>
+
+    <span class="example-spacer"></span>
+    <span>
+      <a class="nav-link" routerLink="" style="text-decoration: none;">
+        <button id="logoutBtn" mat-mini-fab style="background-color: #E06E6B; color: white;">
+          <mat-icon>logout</mat-icon>
+        </button>
+      </a>
+    </span>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container shadow-lg" [style.marginTop.px]="mobileQuery.matches ? 0 : 0">
+    <mat-sidenav id="sidenav" #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+      <img id="userImg" src="/assets/Images/genericAccIcon.png" alt="user-account default pic">
+      <h3 id="toolbartext">Admin Name</h3>
+
+
+      <!-- Dashboard -->
+      <a class="nav-link" routerLink="admindashboard" style="text-decoration: none;">
+        <button mat-button style="padding-right: 42%;" id=btnforeCol>
+          <div class="row">
+            <div class="col-auto me-auto">
+              <mat-icon>view_comfy_alt</mat-icon>
+            </div>
+            <div class="col-auto">
+              Dashboard
+            </div>
+          </div>
+        </button>
+      </a>
+
+      <!-- Client Requests -->
+      <a class="nav-link" routerLink="adminclientrequests" style="text-decoration: none;">
+        <button mat-button style="padding-right: 30%;" id=btnforeCol>
+          <div class="row">
+            <div class="col-auto me-auto">
+              <mat-icon>ballot</mat-icon>
+            </div>
+            <div class="col-auto">
+              Client Requests
+            </div>
+          </div>
+        </button>
+      </a>
+
+      <!-- Client List -->
+      <a class="nav-link" routerLink="adminclientlist" style="text-decoration: none;">
+        <button mat-button style="padding-right: 47%;" id=btnforeCol>
+          <div class="row">
+            <div class="col-auto me-auto">
+              <mat-icon>list</mat-icon>
+            </div>
+            <div class="col-auto">
+              Client List
+            </div>
+          </div>
+        </button>
+      </a>
+
+
+      <!-- Manage Agents -->
+      <a class="nav-link" routerLink="manageagent" style="text-decoration: none;">
+        <button mat-button style="padding-right: 30%;" id=btnforeCol class="agentman">
+          <div class="row">
+            <div class="col-auto me-auto">
+              <mat-icon>person_add_disabled</mat-icon>
+            </div>
+            <div class="col-auto">
+              Manage Agents
+            </div>
+          </div>
+        </button>
+      </a>
+
+
+      <!-- Equipment Management -->
+      <a class="nav-link" routerLink="adminequipmngmt" style="text-decoration: none;">
+        <button mat-button style="padding-right: 3%;" id=btnforeCol>
+          <div class="row">
+            <div class="col-auto me-auto">
+              <mat-icon>inventory</mat-icon>
+            </div>
+            <div class="col-auto">
+              Equipment Management
+            </div>
+          </div>
+        </button>
+      </a>
+
+
+      <!-- Service Management -->
+      <a class="nav-link" routerLink="adminservicemngmt" style="text-decoration: none;">
+        <button mat-button style="padding-right: 14%;" id=btnforeCol>
+          <div class="row">
+            <div class="col-auto me-auto">
+              <mat-icon>cell_tower</mat-icon>
+            </div>
+            <div class="col-auto">
+              Service Management
+            </div>
+          </div>
+        </button>
+      </a>
+
+
+      <!-- Call Logs -->
+      <a class="nav-link" routerLink="admincalllog" style="text-decoration: none;">
+        <button mat-button style="padding-right: 50%;" id=btnforeCol>
+          <div class="row">
+            <div class="col-auto me-auto">
+              <mat-icon>ring_volume</mat-icon>
+            </div>
+            <div class="col-auto">
+              Call Logs
+            </div>
+          </div>
+        </button>
+      </a>
+
+
+      <!-- Call Statistics -->
+      <a class="nav-link" routerLink="admincallstat" style="text-decoration: none;">
+        <button mat-button style="padding-right: 37%;" id=btnforeCol>
+          <div class="row">
+            <div class="col-auto me-auto">
+              <mat-icon>insights</mat-icon>
+            </div>
+            <div class="col-auto">
+              Call Statistics
+            </div>
+          </div>
+        </button>
+      </a>
+
+
+      <!-- CSR Feedbacks -->
+      <a class="nav-link" routerLink="adminfeedback" style="text-decoration: none;">
+        <button mat-button style="padding-right: 32%;" id=btnforeCol>
+          <div class="row">
+            <div class="col-auto me-auto">
+              <mat-icon>feedback</mat-icon>
+            </div>
+            <div class="col-auto">
+              CSR Feedbacks
+            </div>
+          </div>
+        </button>
+      </a>
+    </mat-sidenav>
+
+    
+
+    <mat-sidenav-content style="min-height: 900px;">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+<div class="container">
+  <footer class="py-3 my-4">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Documentation</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contact</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+    </ul>
+    <p class="text-center text-muted">&copy; 22023 Telessist, Inc. All rights reserved.</p>
+  </footer>
+</div>

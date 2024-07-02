@@ -1,0 +1,25 @@
+#statsHeader{
+    color:#002B5B;
+    font-weight: 700;
+    font-size: cal(2em + 1vw);
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+.filter{
+    display:flex;
+    justify-content:flex-end;
+}
+
+#typeDropDown{
+    margin: auto 10px;
+}
+
+table{
+    background-color: #ffffff;
+}
+
+#paginator{
+    background-color: transparent;
+
+}

@@ -1,0 +1,20 @@
+<mat-card class="productCard my-4">
+  <mat-card-header>
+    <mat-card-title> <i class="fa-solid fa-star" *ngFor="let f of filled"></i> <i class="fa-regular fa-star" *ngFor="let e of empty"></i></mat-card-title>
+      <mat-card-subtitle class="my-2" id="username"> <i class="fa-solid fa-user"></i> {{client.userName}} </mat-card-subtitle>
+  </mat-card-header>
+  <!-- <mat-card-subtitle id="username">
+    <mat-icon style="transform: scale(2); color: rgb(9, 70, 123); margin-right: 5%; margin-bottom: 5%;">account_circle
+    </mat-icon>      
+    {{client.userName}}
+  </mat-card-subtitle> -->
+  <mat-card-subtitle id="date">
+    <strong style="color: black; letter-spacing: 1px; font-weight: 500; margin-top: 1%; margin-left: 6%;">Date Posted:</strong>
+    {{indFeedback.feedbackDate | date: "MM/dd/YYYY"}}
+  </mat-card-subtitle>
+
+  <mat-card-content>
+    <div style="color: black; letter-spacing: 1px; font-weight: 500; margin-top: 2%;">Description:</div>
+    <p >{{indFeedback.feedbackDesc}} </p>
+  </mat-card-content>
+</mat-card>

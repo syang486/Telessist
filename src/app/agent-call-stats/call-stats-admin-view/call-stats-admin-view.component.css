@@ -1,0 +1,8 @@
+#searchTool {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.search {
+    margin: auto 10px;
+}

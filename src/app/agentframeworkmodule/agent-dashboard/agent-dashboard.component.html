@@ -1,0 +1,48 @@
+<h2 style="text-align: center; margin-top: 1%; margin-bottom: 5%">Dashboard</h2>
+<div class="row mx-4 my-4 contain">
+  <div class="col-lg-4">
+    <div id="profile">
+      <h4> Hello {{agentname}}!</h4>
+      <p id="welcome"> <img src="/assets/Images/logo.png" alt="logo" style="width: 40px; height: 40px;" class="mb-2" /> Welcome to
+        Telessist </p>
+      <div class="row button-container">
+        <div class="col-lg-4">
+          <button class="fastNav" mat-raised-button (click)="openRequest()">Requests &raquo;</button>
+        </div>
+        <div class="col-lg-4">
+          <button class="fastNav" mat-raised-button (click)="openStat()">Call Stats &raquo;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div id="serviceAnn">
+      <h4><i class="fa-solid fa-triangle-exclamation"></i> Service Announcements</h4>
+      <ul>
+        <li><span>UPDATE: </span>System will be down from 04/05/2023 11:59pm to 04/06/2023 03:00am due to updates. Sorry
+          for the inconvenience</li>
+        <li><span>BUG FIX: </span>The bug reported on the call statistics have been fixed on 04/04/2023. Please report
+          other bugs if found!</li>
+      </ul>
+    </div>
+  </div>
+  <mat-grid-list cols="1" rowHeight="2:1" class="col-lg-4 graph">
+    <div>
+      <h4>Total Calls Received By Types</h4>
+      <ngx-charts-pie-chart [results]="dataPC" [view]="viewPC" [animations]="animationPC" [scheme]="colorSchemePC"
+        [labels]="labelsPC" [doughnut]="doughnut" [tooltipText]="percentageFormatterPC"></ngx-charts-pie-chart>
+    </div>
+  </mat-grid-list>
+</div>
+
+<hr class="featurette-divider">
+
+<div class="info">
+  <div>
+    <h2 class="featurette-heading">How to use Telessist</h2>
+    <p class="lead">Take advantages of all our provided features, including but not restricted to: Service Request,
+      Equipment Request, Tech Request, CSR Management, Call Logs, Call Statistics.</p>
+    <p><a class="btn btn-primary" href="#" role="button">Learn More &raquo;</a></p>
+  </div>
+  <div><img src="/assets/Images/Telecom.png" class="img-fluid my-4" id="roundCornerImg"></div>
+</div>

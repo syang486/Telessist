@@ -1,0 +1,78 @@
+   
+    .registration-form{
+        padding: 50px 0;
+    }
+    
+    .registration-form form{
+        background: linear-gradient(0deg, #E06E6B 0%, #14788c 90%);
+        max-width: 600px;
+        margin: auto;
+        padding: 50px 70px;
+        border-radius: 30px;       
+       
+    }
+    
+    .registration-form .form-icon{
+        text-align: center;
+        background-color: #170168;
+        border-radius: 50%;
+        font-size: 40px;
+        color: white;
+        width: 100px;
+        height: 100px;
+        margin: auto;
+        margin-bottom: 50px;
+        line-height: 100px;
+    }
+    
+    .registration-form .item{
+        border-radius: 20px;
+        margin-bottom: 25px;
+        padding: 10px 20px;
+    }
+    
+
+    
+    @media (max-width: 576px) {
+        .registration-form form{
+            padding: 50px 20px;
+        }
+    
+        .registration-form .form-icon{
+            width: 70px;
+            height: 70px;
+            font-size: 30px;
+            line-height: 70px;
+        }
+    }
+
+.errorstyle{
+    text-align: center; color: rgb(255, 107, 107);
+    margin-bottom: 5%;
+    background: #1e315673;
+    border-radius: 20px;
+    font-weight: 700;
+    font-style: italic;
+    
+}
+
+.inpFields{
+    width: 100%;
+}
+
+.btnlogin{
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    
+    
+}
+
+#CustToolbar {
+    background: linear-gradient(90deg, #054653  19%, #31A4BC 100%);   
+    color: white;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}

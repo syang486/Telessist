@@ -1,0 +1,45 @@
+.productCard {
+    min-height: 18em;
+    max-height: 18em;
+    color: #002B5B;
+    overflow: auto; 
+    position: relative;
+}
+
+.fa-star {
+    color: #EA5455;
+    font-size: 1.3em;
+}
+
+#username {
+    color: #002B5B;
+    font-size: 0.95em;
+}
+
+.fa-user {
+    font-size: 1.1em;
+    margin: 6px 5px 0 0;
+}
+
+#date {
+    font-size: 0.9em;
+    color: rgb(31, 31, 31);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+::-webkit-scrollbar-track {
+    background: #E4DCCF; 
+  }
+   
+  
+::-webkit-scrollbar-thumb {
+    background: #002B5B; 
+  }
+  
+
+::-webkit-scrollbar-thumb:hover {
+    background: #245693; 
+  }

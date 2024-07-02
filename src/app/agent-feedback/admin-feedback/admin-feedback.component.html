@@ -1,0 +1,31 @@
+<h2 style="text-align: center; margin-top: 1%;">Feedbacks</h2>
+<div class="container-fluid">    
+    <div id="searchTool">
+        <div class="search">
+            <mat-form-field style="width:20em">
+            <mat-label>Search By CSR Id</mat-label>
+            <input matInput color="primary" [(ngModel)]="searchText"  placeholder="">
+            </mat-form-field>
+        </div>
+        
+        <div id="datePicker">
+            <mat-form-field appearance="fill" style="width:12em">
+                <mat-label>Choose a date</mat-label>
+                <input #pick matInput [matDatepicker]="picker" (dateInput)="OnDateChange($event.value)">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <button class="btn" color="primary" mat-button (click)="resetDate()">Reset</button> 
+    </div>
+
+    <div class="row">
+        <div class="col-lg-2 col-md-4" *ngFor="let feed of obs | async | adminFeedbackSearch: searchText | agentFeedbackSearch: searchDate">
+            <app-agent-feedback-card [indFeedback] = "feed"></app-agent-feedback-card>
+        </div>
+    </div>
+</div>
+<div>
+    <mat-paginator [pageSize]="12" [pageSizeOptions]="[6, 12, 60, 120]" aria-label="Select page"></mat-paginator>
+</div>

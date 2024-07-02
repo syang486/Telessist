@@ -1,0 +1,70 @@
+.filter{
+    display:flex;
+    justify-content:flex-end;
+}
+
+#typeDropDown{
+    margin: auto 10px;
+    min-width: 115px;
+}
+
+#profile {
+    background-image: url("/assets/Images/LogoThree.jpg");
+    border-radius: 10px;
+    height: 300px;
+}
+
+#profile h4 {
+    padding: 30px 30px 10px 30px;
+    font-size: 1.7em;
+    font-weight: 700;
+}
+
+#profile p {
+    padding: 0 30px;
+    font-size: 1.4em;
+}
+
+.graph {
+    border-radius: 10px;
+    height: 300px;
+}
+
+.fastNav {
+    width: 165px;
+    padding: 30px;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 50px;
+    justify-content: space-around;
+}
+
+#serviceAnn h4 {
+    font-size: 1.7em;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+
+.graph h4{
+    font-size: 1.7em;
+    font-weight: 700;
+}
+
+i {
+    color:rgb(203, 35, 77);
+}
+
+span {
+    font-weight: 600;
+    font-size: 1.2em;
+    color:rgb(203, 35, 77);
+}
+
+.info {
+    display: flex;
+    margin: 0 3em;
+    justify-content: space-around;
+    align-items: center;
+}

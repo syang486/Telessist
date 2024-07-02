@@ -1,0 +1,21 @@
+
+#searchTool {
+    display: flex;
+    justify-content: end;
+    gap: 1em;
+}
+
+mat-paginator {
+    background-color: transparent;
+    padding-top: 1em;
+    padding-bottom: 2em;
+}
+
+.btn {
+    height: 2.7em;
+    margin: 10px 2px;
+}
+
+mat-hint {
+    font-size: 0.7em;
+}
