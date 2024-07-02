@@ -1,0 +1,65 @@
+/* ::ng-deep .validS.mat-mdc-snack-bar-container{
+    --mat-mdc-snack-bar-button-color: #EA5455;
+    --mdc-snackbar-container-color: #002B5B;
+    --mdc-snackbar-supporting-text-color: rgba(255, 255, 255, 0.87);
+}
+
+::ng-deep .invalidS.mat-mdc-snack-bar-container{
+    --mat-mdc-snack-bar-button-color: #002B5B;
+    --mdc-snackbar-container-color: #EA5455;
+    --mdc-snackbar-supporting-text-color: rgba(255, 255, 255, 0.87);
+} */
+
+.invalidS.mat-mdc-snack-bar-container {
+    --mdc-snackbar-container-color: #EA5455;
+    --mdc-snackbar-supporting-text-color: rgba(255, 255, 255, 0.87);
+}
+
+.invalidS button {
+    background-color: #002B5B !important;
+    color: white !important;
+    border: none;
+} 
+
+.validS.mat-mdc-snack-bar-container {
+    --mdc-snackbar-container-color: #002B5B;
+    --mdc-snackbar-supporting-text-color: rgba(255, 255, 255, 0.87);
+}
+
+.validS button {
+    background-color: #EA5455 !important;
+    color: white !important;
+    border: none;
+}
+
+.btn {
+    margin: 0 0 0 10px;
+}
+
+/* ::ng-deep .invalidS {
+    background-color: #EA5455 !important;
+} */
+
+/* .invalidS {
+    color: #EA5455;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.invalidS button {
+    background-color: #002B5B;
+    color: white !important;
+    border: none;
+}
+
+.validS {
+    color: #002B5B;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.validS button {
+    background-color: #EA5455;
+    color: white !important;
+    border: none;
+} */

@@ -1,0 +1,14 @@
+<div class="formTitle">
+    <h2 style="text-align: center; padding: 5%;">Tech Request Form</h2>
+    <form id="requestForm" [formGroup]="form" (ngSubmit)="addTechRequest()">
+        <mat-form-field appearance="fill" class="services">
+            <mat-label>Tech Request Description</mat-label>
+            <textarea matInput formControlName="description">Add a description</textarea>
+        </mat-form-field>
+
+        <button mat-raised-button type="submit" value="Submit Request" style="background-color: #31A4BC; color: white;"
+            class="btnlogin">Submit
+        </button>
+
+    </form>
+</div>

@@ -1,0 +1,68 @@
+<mat-toolbar id="CustToolbar">
+    <span>
+        <div style="font-size:40px ; font-family:'Times New Roman', Times, serif; color: white;">
+            <img src="/assets/Images/logo.png" alt="logo" style="width: 40px; height: 40px;" class="mb-2" />
+            Telessist
+        </div>
+    </span>
+</mat-toolbar>
+
+
+<h4 style="text-align: center; margin-top: 1%; margin-bottom: 1%;">Resolve Tech Request</h4>
+
+<div>
+    <div class="form container text-center">
+        <form [formGroup]="updateForm" (ngSubmit)="updateTechRequest()"> 
+            <div>
+            <mat-form-field class="field">
+                <mat-label>Tech Request ID</mat-label>
+                <input matInput value="{{techRequest.techRequestId}}" formControlName="techRequestId" readonly>
+            </mat-form-field>
+            <mat-form-field class="field">
+                <mat-label>Date Requested</mat-label>
+                <input matInput value="{{techRequest.dateOfTechRequest}}" formControlName="dateOfTechRequest" readonly>
+            </mat-form-field>
+            <mat-form-field class="field">
+                <mat-label>Client ID</mat-label>
+                <input matInput value="{{techRequest.clientId}}" formControlName="clientId" readonly>
+            </mat-form-field>
+            <mat-form-field class="field">
+                <mat-label>CSR ID</mat-label>
+                <input matInput value="{{csrId}}" formControlName="csrId" readonly>
+            </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="field">
+                    <mat-label>Service Request Description</mat-label>
+                    <textarea matInput value="{{techRequest.techRequestDesc}}" formControlName="techRequestDesc" readonly></textarea>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="fill" class="status">
+                    <mat-label>Request Status</mat-label>
+                    <mat-select required formControlName="techRequestStatus">
+                      <mat-option *ngFor="let status of statuses" [value]="status">{{status}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div class="error-desc">
+                    <small *ngIf="updateForm.get('techRequestStatus')?.touched && updateForm.get('techRequestStatus')?.hasError('required')">Status is required</small>
+                </div>
+                <mat-form-field appearance="fill">
+                    <mat-label>Scheduled Date</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="techScheduledDate" placeholder="start date">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+
+            </div>
+            <div class = "addCancelButtons">
+                <button mat-raised-button mat-dialog-close type="submit" style="background-color: #31A4BC; color: white;"
+                    class="btnlogin">Resolve Request</button> 
+                  <button mat-raised-button mat-dialog-close style="background-color: #b95b5b; color: white;"
+                        class="btnlogin">Cancel
+                        </button>
+              </div>
+        </form>
+    </div>
+</div>

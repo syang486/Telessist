@@ -1,0 +1,20 @@
+.forms {
+    
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#remove {
+    margin-left: 6px;
+    padding-top: 6px;
+}
+table {
+    background-color: #ffffff;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px 10px 0 0;
+    min-height: 10.4em;
+    max-height: 12.4em;
+}
+

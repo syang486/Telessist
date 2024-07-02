@@ -1,0 +1,53 @@
+<h2 style="text-align: center; margin-top: 1%;">To-Do list</h2>
+
+<div class="filter">
+    <mat-form-field id="typeDropDown" appearance="fill">
+        <mat-label>By Status</mat-label>
+        <mat-select [(value)]="selected" (selectionChange)="handleStatus()">
+          <mat-option value="None">None</mat-option>
+          <mat-option value="Pending">Pending</mat-option>
+          <mat-option value="Active">Active</mat-option>
+          <mat-option value="Inactive">Inactive</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field style="width: 20%; min-width: 375px; margin-right:2%;">
+        <mat-label>Search</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Search todo list..." #input>
+    </mat-form-field>
+</div>
+
+<div>
+    <table id="serviceTable" mat-table [dataSource]="dataTable" class="mat-elevation-z8">        
+        <ng-container matColumnDef="serviceId">
+            <th mat-header-cell *matHeaderCellDef> Service Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.serviceId}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="clientId">
+            <th mat-header-cell *matHeaderCellDef> Client Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.clientId}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="dateOfServiceRequest">
+            <th mat-header-cell *matHeaderCellDef> Date & Time </th>
+            <td mat-cell *matCellDef="let element"> {{element.dateOfServiceRequest}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="descriptionOfServiceRequest">
+            <th mat-header-cell *matHeaderCellDef> Description </th>
+            <td mat-cell *matCellDef="let element"> {{element.serviceRequestDesc}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="serviceRequestStatus">
+              <th mat-header-cell *matHeaderCellDef> Status </th>
+              <td mat-cell *matCellDef="let element"> {{element.serviceRequestStatus}} </td>
+        </ng-container>
+      
+        <tr style="background-color: rgb(199, 239, 230);" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>    
+</div>
+<div>
+    <mat-paginator id="paginator"  [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page"></mat-paginator>
+</div>

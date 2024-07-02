@@ -1,0 +1,32 @@
+.card-head {
+    padding-top: 1.5em;
+    
+}
+
+.clientCard {
+    min-height: 15em;
+    max-height: 15em;
+    color: #002B5B;
+    overflow: auto; 
+    position: relative;
+}
+
+#techCard {
+    background-color: #dafffb97;
+}
+
+button {
+    width: 200px;
+    margin: auto;
+    position: absolute;
+    top: 150px;
+    left: 30px;
+}
+
+i {
+    margin-right: 10px;
+}
+
+.row {
+    justify-content: space-around;
+}

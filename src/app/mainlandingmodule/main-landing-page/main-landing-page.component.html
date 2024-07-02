@@ -1,0 +1,154 @@
+<mat-toolbar id="CustToolbar">
+  <span>
+    <a [routerLink]="['']" style="text-decoration: none; color: white;">
+    <button id="iconheader" mat-button style="font-size:40px ; font-family:'Times New Roman', Times, serif">
+      <img src="/assets/Images/logo.png" alt="logo" style="width: 40px; height: 40px;" class="mb-2"/> Telessist
+    </button>
+  </a>   
+  </span>
+  <span class="example-spacer"></span>
+  <a [routerLink]="['login']" style="text-decoration: none;">
+      <button mat-raised-button id="navbtn" class="loginbutton">Login
+          <mat-icon>login</mat-icon>
+      </button>
+  </a>
+  <a [routerLink]="['register']" style="text-decoration: none; margin-left: 10px;">
+    <button mat-raised-button id="navbtn" class= "registerbutton">Register
+        <mat-icon>create</mat-icon>
+    </button>
+</a>
+</mat-toolbar>
+
+<!-- <ngb-carousel >
+	<ng-template ngbSlide>
+		<div class="picsum-img-wrapper">
+			<img src="/assets/Images/LogoOne.png" alt="First slide" />
+		</div>
+		
+	</ng-template>
+	<ng-template ngbSlide>
+		<div class="picsum-img-wrapper">
+			<img src="/assets/Images/LogoTwo.jpg" alt="Second slide" />
+		</div>
+		
+	</ng-template>
+	<ng-template ngbSlide>
+		<div class="picsum-img-wrapper">
+			<img src="/assets/Images/LogoThree.jpg" alt="Third slide" />
+		</div>
+  			</ng-template>
+</ngb-carousel> -->
+
+<div id="carouselExampleIndicators" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/assets/Images/LogoOne.png" class="d-block w-100" alt="logoOne">
+    </div>
+    <div class="carousel-item">
+      <img src="/assets/Images/LogoTwo.jpg" class="d-block w-100" alt="logoTwo">
+    </div>
+    <div class="carousel-item">
+      <img src="/assets/Images/LogoThree.jpg" class="d-block w-100" alt="logoThree">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+<!-- Marketing Features start -->
+<div class="container marketing" style="margin-top: 50px;">
+    <!--Marketing Feature 1 -->
+    <div class="row featurette my-4">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">Our Mission</h2>
+            <p class="lead">Enhance Telecommunication companies' ability to provide services to their customers seamlessly
+              with increased efficiency and capabilities of the Customer Service Representatives (CSRs) and Managers themselves at said companies.</p>
+            <p><a class="btn btn-primary" href="#" role="button">Learn More &raquo;</a></p>
+        </div>
+        <div class="col-md-5">
+            <img src="/assets/Images/Telecom.png" class="img-fluid my-4" id="roundCornerImg">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+    <!--Marketing Feature 2 -->
+    <div class="row featurette my-4">
+        <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">Feature Overview</h2>
+            <p class="lead">Some of our features include: </p>
+            <ul class="lead">
+              <li>Customer Portal: To submit requests and provide timely feedback</li>
+              <li>Agent Portal: Digital platform to record call logs and view client information</li>
+              <li>Manager Portal: Management of equipment, technicians, and services in one platform</li>
+            </ul>
+            <p><a class="btn btn-primary" href="#" role="button">View Details &raquo;</a></p>
+        </div>
+        <div class="col-md-5 order-md-1">
+            <img src="/assets/Images/Feature.png" class="img-fluid my-4" id="roundCornerImg">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+</div>
+<!-- Marketing Features End -->
+
+<div class="container">
+    <footer class="py-5">
+      <div class="row">
+        <div class="col-6 col-md-2 mb-3">
+          <h5>Manager</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>            
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>        
+          </ul>
+        </div>
+  
+        <div class="col-6 col-md-2 mb-3">
+          <h5>Clients</h5>
+          <ul class="nav flex-column">            
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>            
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>            
+          </ul>
+        </div>
+  
+        <div class="col-6 col-md-2 mb-3">
+          <h5>CSR Agents</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>            
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>        
+          </ul>
+        </div>
+  
+        <div class="col-md-5 offset-md-1 mb-3">
+          <form>
+            <h5 id="subscribe">Subscribe to our newsletter</h5>
+            <p>Get monthly digest of what's new and exciting updates from us.</p>
+            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+              <label for="newsletter1" class="visually-hidden">Email address</label>
+              <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+              <button class="btn btn-primary" type="button">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+  
+      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+        <h6>&copy; 2023 Telessist, Inc. All rights reserved.</h6>
+        <ul class="list-unstyled d-flex">
+          <li class="ms-3"><mat-icon>facebook</mat-icon></li>
+        </ul>
+      </div>
+    </footer>
+  </div>

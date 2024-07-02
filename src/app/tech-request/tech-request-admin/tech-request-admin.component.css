@@ -1,0 +1,30 @@
+
+h2 {
+    text-align: center;
+    color: #002B5B;
+    margin-bottom: 10px;
+}
+#statusDropDown{
+    width: 13%;
+}
+
+
+.forms {
+    
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+#remove {
+    margin-left: 6px;
+    padding-top: 6px;
+}
+
+
+#download {
+    margin: 20px 20px 0 0 ;
+}
+
+i {
+    font-size: 1.2em;
+}

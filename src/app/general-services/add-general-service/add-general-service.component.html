@@ -1,0 +1,66 @@
+<mat-toolbar id="CustToolbar">
+    <span>
+        <a [routerLink]="['']" style="text-decoration: none; color: white;">
+        <button mat-button style="font-size:40px ; font-family:'Times New Roman', Times, serif">
+            <img src="/assets/Images/logo.png" alt="logo" style="width: 40px; height: 40px;" class="mb-2"/> Telessist
+        </button>
+        </a>   
+    </span>
+</mat-toolbar>
+
+<h2 style="text-align: center; margin-top: 2%; margin-bottom: 2%;">Service Management</h2>
+
+
+<div class="formTitle">
+    <form [formGroup]="addServiceForm" (ngSubmit)="addGeneralService()">
+        <div>
+           
+                <mat-form-field class="field">
+                    <mat-label>Service ID</mat-label>
+                    <input matInput formControlName="serviceId">
+                </mat-form-field>
+           
+                <mat-form-field class="field">
+                    <mat-label>Service Name</mat-label>
+                    <input matInput formControlName="serviceName">
+                </mat-form-field>
+          
+                <mat-form-field class="field">
+                    <mat-label>Monthly Price</mat-label>
+                    <input matInput formControlName="monthlyPrice">
+                </mat-form-field>
+           
+                <mat-form-field appearance="fill" class="field">
+                    <mat-label>Location</mat-label>
+                    <mat-select formControlName="location" required>
+                        <mat-option value="Alberta">Alberta</mat-option>
+                        <mat-option value="British Columbia">British Columbia</mat-option>
+                        <mat-option value="Manitoba">Manitoba</mat-option>
+                        <mat-option value="New Brunswick">New Brunswick</mat-option>
+                        <mat-option value="Newfoundland and Labrador">Newfoundland and Labrador</mat-option>
+                        <mat-option value="Nova Scotia">Nova Scotia</mat-option>
+                        <mat-option value="Ontario">Ontario</mat-option>
+                        <mat-option value="Prince Edward Island">Prince Edward Island</mat-option>
+                        <mat-option value="Quebec">Quebec</mat-option>
+                        <mat-option value="Saskatchewan">Saskatchewan</mat-option>
+                        <mat-option value="Northwest Territories">Northwest Territories</mat-option>
+                        <mat-option value="Nunavut">Nunavut</mat-option>
+                        <mat-option value="Yukon">Yukon</mat-option>
+                    </mat-select>
+                </mat-form-field>
+           
+            <div class="addCancelButtons">
+                <button mat-raised-button type="submit" style="background-color: #31A4BC; color: white;"
+                class="btnlogin">Add Service
+                </button>
+
+                <button mat-raised-button mat-dialog-close style="background-color: #ea5454; color: white;"
+                class="btnlogin">Cancel
+                </button>
+            </div>
+            
+
+        </div>
+    </form>
+</div>
+

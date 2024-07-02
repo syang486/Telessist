@@ -1,0 +1,46 @@
+<mat-toolbar id="CustToolbar">
+    <span>
+        <div style="font-size:40px ; font-family:'Times New Roman', Times, serif; color: white;">
+            <img src="/assets/Images/logo.png" alt="logo" style="width: 40px; height: 40px;" class="mb-2" />
+            Telessist
+        </div>
+    </span>
+</mat-toolbar>
+
+<h4 style="text-align: center; margin-top: 1%; margin-bottom: 1%;">Add Technician</h4>
+
+<div class="container text-center">
+    <form [formGroup]="addForm" (ngSubmit)="addTechnician()">
+        <div>
+            <mat-form-field class="field">
+                <mat-label>Technician First Name</mat-label>
+                <textarea matInput formControlName="techFirstName">Enter First Name:</textarea>
+            </mat-form-field>
+            <mat-form-field class="field">
+                <mat-label>Technician Last Name</mat-label>
+                <textarea matInput formControlName="techLastName">Enter Last Name:</textarea>
+            </mat-form-field>
+            <mat-form-field class="field">
+                <mat-label>Technician Address</mat-label>
+                <textarea matInput formControlName="techAddress">Enter Address:</textarea>
+            </mat-form-field>
+            <div style="margin: auto;
+                width: 50%;    
+                padding: 10px;">
+
+
+                <div class="addCancelButtons">
+                    <button mat-raised-button class="btnlogin"
+                        style="color: aliceblue; background-color:rgb(34, 110, 110);" type="submit" value="Submit">
+                        Add
+                    </button>
+                    <button mat-raised-button class="btnlogin" style="background-color: #ea5454; color: white;"
+                        mat-dialog-close>
+                        Cancel
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</div>

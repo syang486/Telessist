@@ -1,0 +1,63 @@
+<mat-toolbar id="CustToolbar">
+    <span>
+        <div style="font-size:40px ; font-family:'Times New Roman', Times, serif; color: white;">
+            <img src="/assets/Images/logo.png" alt="logo" style="width: 40px; height: 40px;" class="mb-2" />
+            Telessist
+        </div>
+    </span>
+</mat-toolbar>
+
+<h4 style="text-align: center; margin-top: 1%; margin-bottom: 1%;">Resolve Service Request</h4>
+
+<div class="container text-center">
+    <form id="requestUpdateForm" [formGroup]="updateForm" (ngSubmit)="updateServiceRequest()">
+        <div>
+            <mat-form-field class="field">
+                <mat-label>Service Request ID</mat-label>
+                <input matInput value="{{serviceRequest.serviceRequestId}}" formControlName="serviceRequestId" readonly>
+            </mat-form-field>
+            <mat-form-field class="field">
+                <mat-label>Date & Time</mat-label>
+                <input matInput value="{{serviceRequest.dateOfServiceRequest}}" formControlName="dateOfServiceRequest" readonly>
+            </mat-form-field>
+            <mat-form-field class="field">
+                <mat-label>Service ID</mat-label>
+                <input matInput value="{{serviceRequest.serviceId}}" formControlName="serviceId" readonly>
+            </mat-form-field>
+            <mat-form-field class="field">
+                <mat-label>Client ID</mat-label>
+                <input matInput value="{{serviceRequest.clientId}}" formControlName="clientId" readonly>
+            </mat-form-field>
+            <mat-form-field class="field">
+                <mat-label>CSR Id</mat-label>
+                <input matInput value="{{csrId}}" formControlName="csrId" readonly>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field class="field">
+                <mat-label>Service Request Description</mat-label>
+                <textarea matInput value="{{serviceRequest.serviceRequestDesc}}" formControlName="serviceRequestDesc" readonly></textarea>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill" class="status">
+                <mat-label>Request Status</mat-label>
+                <mat-select required formControlName="serviceRequestStatus">
+                  <mat-option *ngFor="let status of statuses" [value]="status">{{status}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <div class="error-desc">
+                <small *ngIf="updateForm.get('serviceRequestStatus')?.touched && updateForm.get('serviceRequestStatus')?.hasError('required')">Status is required</small>
+            </div>
+        </div>
+        <div class = "addCancelButtons">
+            <button mat-raised-button mat-dialog-close type="submit" style="background-color: #31A4BC; color: white;"
+                class="btnlogin">Resolve Request</button> 
+              <button mat-raised-button mat-dialog-close style="background-color: #b95b5b; color: white;"
+                    class="btnlogin">Cancel
+                    </button>
+          </div>
+    </form>
+</div>
+

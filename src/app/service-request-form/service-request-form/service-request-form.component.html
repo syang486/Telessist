@@ -1,0 +1,42 @@
+<div class="formTitle">
+    <h2 id="serviceHead" style="text-align: center; padding: 5%;">Service Request Form</h2>
+    <form id="requestForm" [formGroup]="serviceForm" (ngSubmit)="addServiceRequest()">
+
+        <mat-form-field appearance="fill" class="services">
+            <mat-label>Service to Request</mat-label>
+            <mat-select required formControlName="serviceId" (selectionChange)="changePromo()" [(value)]="selected">
+                <mat-option *ngFor="let service of generalServicesByLocation"
+                    [value]="service.serviceId">{{service.serviceName}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <div class="error-desc">
+            <small *ngIf="serviceForm.get('serviceId')?.touched && serviceForm.get('serviceId')?.hasError('required')">
+                *Service selection is required
+            </small>
+        </div>
+
+        <p style="margin-left: 5%; color: rgb(41, 137, 38); font-weight: 700; font-size: 1.2em;" *ngIf="promotion">
+            * Promotion available for this service: <span> {{promotion}}</span>
+        </p>
+
+
+        <mat-form-field class="description">
+            <mat-label>Service Request Description</mat-label>
+            <textarea matInput formControlName="serviceRequestDesc"></textarea>
+        </mat-form-field>
+
+        <div class="error-desc">
+            <small
+                *ngIf="serviceForm.get('serviceRequestDesc')?.touched && serviceForm.get('serviceRequestDesc')?.hasError('required')">
+                *Description is required
+            </small>
+        </div>
+
+
+        <button mat-raised-button type="submit" value="Submit Request" style="background-color: #31A4BC; color: white;"
+            class="btnlogin">
+            Submit
+        </button>
+    </form>
+</div>

@@ -1,0 +1,78 @@
+<div class="filter">
+    <mat-form-field id="typeDropDown" appearance="fill">
+        <mat-label>By Status</mat-label>
+        <mat-select [(value)]="selected" (selectionChange)="sortByStatus()">
+            <mat-option value="None">None</mat-option>
+            <mat-option value="Pending">Pending</mat-option>
+            <mat-option value="Active">Active</mat-option>
+            <mat-option value="Inactive">Inactive</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field style="width: 20%; min-width: 375px; margin-right:2%;">
+        <mat-label id="test">Filter</mat-label>
+                <input id="test" matInput (keyup)="applyFilter($event)"
+                    placeholder="Search by Client Id or description" #input>
+    </mat-form-field>
+</div>
+
+<div>
+    <table id="requestTable" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="clientId">
+            <th mat-header-cell *matHeaderCellDef> Client Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.clientId}} </td>
+        </ng-container>
+        <ng-container matColumnDef="requestedDate">
+            <th mat-header-cell *matHeaderCellDef> Requested Date & Time </th>
+            <td mat-cell *matCellDef="let element"> {{date(element.dateOfTechRequest)}} </td>
+        </ng-container>
+        <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef> Status </th>
+            <td mat-cell *matCellDef="let element"> {{element.techRequestStatus}} </td>
+        </ng-container>
+        <ng-container matColumnDef="scheduledDate">
+            <th mat-header-cell *matHeaderCellDef> Scheduled Date </th>
+            <td mat-cell *matCellDef="let element"> {{date2(element.techScheduledDate)}} </td>
+        </ng-container>
+        <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef> Description </th>
+            <td mat-cell *matCellDef="let element"> {{element.techRequestDesc}} </td>
+        </ng-container>
+        <ng-container matColumnDef="technician">
+            <th mat-header-cell *matHeaderCellDef> Technician </th>
+            <td mat-cell *matCellDef="let element">{{element.technician?.techFirstName}}
+                <mat-icon id="remove" *ngIf="element.technician" (click)="deleteTechnician(element)">remove</mat-icon>
+                <mat-icon *ngIf="!element.technician" (click)="getAllTechnicians(element)">add</mat-icon>
+            </td>
+        </ng-container>
+        <ng-cotainer matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef> Resolve </th>
+            <td mat-cell *matCellDef="let element">
+                <i (click)="updateTechRequest(element)" class="fa-solid fa-pen"></i>           
+            </td>
+        </ng-cotainer>
+
+        <ng-cotainer matColumnDef="delete">
+            <th id="deleteHeader" mat-header-cell *matHeaderCellDef> Delete </th>
+            <td mat-cell *matCellDef="let element">
+                <mat-icon (click)="deleteTechRequest(element.techRequestId)">delete</mat-icon>
+                <!-- <button (click)="deleteTechRequest(element.techRequestId)" class="btn btn-outline-light">Delete</button> -->
+            </td>
+        </ng-cotainer>
+        <ng-cotainer matColumnDef="callLog">
+            <th mat-header-cell *matHeaderCellDef> Call Log </th>
+            <td mat-cell *matCellDef="let element">
+                <mat-icon (click)="addCallLog(element)"> phone</mat-icon>
+                <!-- <button (click)="addCallLog(element)" class="btn btn-outline-light"><i class="fa-solid fa-phone"></i></button> -->
+            </td>
+        </ng-cotainer>
+
+
+        <tr style="background-color: rgb(199, 239, 230);" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+</div>
+<div>
+    <mat-paginator id="paginator" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"
+        aria-label="Select page"></mat-paginator>
+</div>

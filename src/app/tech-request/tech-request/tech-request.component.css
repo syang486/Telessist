@@ -1,0 +1,44 @@
+
+
+textarea {
+    min-height: 20em;
+    width: 100%;
+}
+
+.description {
+    min-height: 20em;
+    margin-top: 15px;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.error-desc {
+    margin-left: 6%; color: rgb(228, 21, 21);
+    margin-bottom: 2%;
+}
+
+.services {
+    justify-content: start;
+    margin-left: 5%;
+    width: 90%;
+}
+
+.formTitle {
+    background: linear-gradient(0deg, #8fe4f5af 0%, #d08f7aa4 90%);
+    margin-top: 3%;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+    border-radius: 20px;
+    max-width: 800px;
+    color: rgb(13, 12, 12); 
+}
+.btnlogin{
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 3%;
+    
+    
+}
